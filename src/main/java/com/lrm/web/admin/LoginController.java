@@ -37,7 +37,7 @@ public class LoginController {
                         RedirectAttributes attributes) {
         User user = userService.checkUser(username, password);
         if (user != null) {
-            user.setPassword(null);
+            user.setPassword(null);     // 不要把用户密码传到前端去了，不安全
             session.setAttribute("user",user);
             return "admin/index";
         } else {
