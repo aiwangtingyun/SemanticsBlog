@@ -39,8 +39,8 @@ public class MD5Utils {
 
     }
 
-
     public static void main(String[] args) {
+        // 这里获取加密字符串
         System.out.println(code("199583"));
     }
 }
