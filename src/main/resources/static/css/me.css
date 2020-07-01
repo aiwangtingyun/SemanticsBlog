@@ -3,6 +3,29 @@ body {
     background: url("../images/bg.png");
 }
 
+/*------- image ------*/
+.m-head-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.m-head-image-smqll {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/*------- border-radius ------*/
+.m-border-radius-big {
+    border-radius: 16px !important;
+}
+
+/*------- padded ------*/
 .m-padded-mini {
     padding: 0.2em !important;
 }
