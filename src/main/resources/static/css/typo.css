@@ -1,14 +1,15 @@
 @charset "utf-8";
 
 .typo p {
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.8;
   text-align: justify;
 }
 
 .typo li {
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
   padding: 4px 0;
 }
 
@@ -158,6 +159,7 @@
 
 /* 代码片断 */
 .typo pre,.typo  code,.typo  pre tt {
+  font-size: 17px;
   font-family: Courier, 'Courier New', monospace;
 }
 
