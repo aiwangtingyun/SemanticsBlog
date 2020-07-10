@@ -173,7 +173,25 @@ body {
     color: #00B5AD !important;
 }
 
+.m-blog-content {
+    min-height: 35em !important;
+    max-height: 35em !important;
 
+    /* top right bottom left */
+    padding: 2em 3em 2em 3em !important;
+    font-family: Courier !important;
+    font-size: 16px !important;
+}
+
+.m-blog-scription {
+    min-height: 10em !important;
+    max-height: 10em !important;
+
+    /* top right bottom left */
+    padding: 1em 2em 1em 2em !important;
+    font-family: Courier !important;
+    font-size: 15px !important;
+}
 
 .m-mobile-show {
    display: none !important;

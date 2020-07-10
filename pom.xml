@@ -5,7 +5,7 @@
 
 	<groupId>com.lrm</groupId>
 	<artifactId>blog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<name>blog</name>
@@ -46,7 +46,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<!-- 移除内嵌的 tomcat 服务器 -->
+			<!-- 打包的时候移除内嵌的 tomcat 服务器 -->
 			<scope>provided</scope>
 		</dependency>
 
