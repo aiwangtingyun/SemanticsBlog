@@ -1,8 +1,11 @@
 spring:
+  # 模板引擎类型
   thymeleaf:
     mode: HTML
+  # 当前激活的 yaml 类型
   profiles:
-    active: pro
+    active: dev
+  # 国际化
   messages:
     basename: i18n/messages
 
