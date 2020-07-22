@@ -5,6 +5,24 @@
 </head>
 <body>
 
+<div class="ui container">
+  <div id="delTipModal" class="ui tiny modal">
+    <div class="header"><i class="warning icon"></i>警告</div>
+    <div class="content" style="text-align: center !important; font-size: 18px !important;">
+      <p style="alignment: center">是否确认删除该博客？</p>
+    </div>
+    <div class="actions">
+      <div id="del-cancel" class="ui black basic button">
+        取消
+      </div>
+      <div id="del-confirm" class="ui positive button">
+        确认
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <!--导航-->
   <nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
     <!-- fragment -->
@@ -78,7 +96,8 @@
             <td th:text="${blog.updateTime}">2017-10-02 09:45</td>
             <td>
               <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
-              <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
+<!--              <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>-->
+              <a href="#" th:del-url="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button del-btn">删除</a>
             </td>
           </tr>
           </tbody>
@@ -159,6 +178,31 @@
         page : $("[name='page']").val()
       });
     }
+
+    // 点击删除博客按钮
+    $(".del-btn").click(function () {
+      let delUrl = $(this).attr("del-url");
+      $("#del-confirm").attr("del-url", delUrl);
+      $("#delTipModal").modal("show");
+    });
+
+    // 取消删除
+    $("#del-cancel").click(function () {
+      $("#delTipModal").modal("hide");
+    });
+
+    // 确认删除博客
+    $("#del-confirm").click(function () {
+      let delUrl = $(this).attr("del-url");
+      $("#delTipModal").modal("hide");
+      $.ajax({
+        url: delUrl,
+        type: "GET",
+        success: function () {
+          alert("删除成功！");
+        }
+      });
+    });
 
   </script>
 </body>
