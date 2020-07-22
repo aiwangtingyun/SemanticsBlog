@@ -4,7 +4,7 @@ spring:
     mode: HTML
   # 当前激活的 yaml 类型
   profiles:
-    active: dev
+    active: jpa
   # 国际化
   messages:
     basename: i18n/messages

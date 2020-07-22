@@ -85,6 +85,11 @@ public class BlogController {
         blog.setType(typeService.getType(blog.getType().getId()));
         blog.setTags(tagService.listTag(blog.getTagIds()));
         Blog b;
+
+        if (blog.getFlag().equals("")) {
+            blog.setFlag("原创");
+        }
+
         if (blog.getId() == null) {
             b =  blogService.saveBlog(blog);
         } else {

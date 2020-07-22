@@ -12,7 +12,7 @@ spring:
 logging:
   level:
     root: warn
-    com.wang: warn
+    com.wang: info
   file: log/blog-pro.log
 
 server:

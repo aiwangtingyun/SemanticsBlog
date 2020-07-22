@@ -5,12 +5,9 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-/**
- * 操作 t_user 表的 mapper
- */
-@Mapper
+//@Mapper
 public interface UserMapper {
 
-    @Select("select * from t_user where username=#{username} and password=#{password}")
+    //@Select("select * from t_user where username=#{username} and password=#{password}")
     public User getUserByNameAndPassword(@Param("username") String username, @Param("password") String password);
 }
