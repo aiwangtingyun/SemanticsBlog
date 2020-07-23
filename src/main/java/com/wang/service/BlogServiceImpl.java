@@ -89,6 +89,7 @@ public class BlogServiceImpl implements BlogService {
         },pageable);
     }
 
+    // 获取博客列表
     @Override
     public Page<Blog> listBlog(String query, Pageable pageable) {
         return blogRepository.findByQuery(query,pageable);
@@ -116,12 +117,12 @@ public class BlogServiceImpl implements BlogService {
         return blogRepository.count();
     }
 
-
+    // 发布新博客
     @Transactional
     @Override
     public Blog saveBlog(Blog blog) {
         if (blog.getId() == null) {
-            blog.setCreateTime(new Date());
+            // blog.setCreateTime(new Date());
             blog.setUpdateTime(new Date());
             blog.setViews(0);
         } else {
@@ -130,6 +131,7 @@ public class BlogServiceImpl implements BlogService {
         return blogRepository.save(blog);
     }
 
+    // 更新博客
     @Transactional
     @Override
     public Blog updateBlog(Long id, Blog blog) {

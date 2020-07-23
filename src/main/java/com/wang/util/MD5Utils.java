@@ -2,6 +2,7 @@ package com.wang.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 /**
  * Created by limi on 2017/10/15.
@@ -42,5 +43,8 @@ public class MD5Utils {
     public static void main(String[] args) {
         // 这里获取加密字符串
         System.out.println(code("199583"));
+
+        Date date = new Date("2018/08/30 05:22:20");
+        System.out.println(date.toString());
     }
 }

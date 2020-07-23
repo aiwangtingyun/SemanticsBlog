@@ -33,6 +33,7 @@ public class Blog {
     private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
+    private String strDateTime;
 
     // 多篇博客对应一种类型
     @ManyToOne
@@ -211,6 +212,14 @@ public class Blog {
         this.description = description;
     }
 
+    public String getStrDateTime() {
+        return strDateTime;
+    }
+
+    public void setStrDateTime(String strDateTime) {
+        this.strDateTime = strDateTime;
+    }
+
     public void init() {
         this.tagIds = tagsToIds(this.getTags());
     }
@@ -234,7 +243,6 @@ public class Blog {
         }
     }
 
-
     @Override
     public String toString() {
         return "Blog{" +
@@ -251,6 +259,7 @@ public class Blog {
                 ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", strDateTime='" + strDateTime + '\'' +
                 ", type=" + type +
                 ", tags=" + tags +
                 ", user=" + user +
