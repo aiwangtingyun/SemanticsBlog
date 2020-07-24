@@ -93,8 +93,10 @@ public class BlogController {
         // 是否手动输入了创建日期
         if (blog.getStrDateTime().equals("")) {
             blog.setCreateTime(new Date());
+            blog.setUpdateTime(new Date());
         } else {
             blog.setCreateTime(new Date(blog.getStrDateTime()));
+            blog.setUpdateTime(new Date(blog.getStrDateTime()));
         }
 
         // 通过博客 ID 区分是新增还是更新

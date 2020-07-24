@@ -105,7 +105,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Map<String, List<Blog>> archiveBlog() {
         List<String> years = blogRepository.findGroupYear();
-        Map<String, List<Blog>> map = new HashMap<>();
+        Map<String, List<Blog>> map = new LinkedHashMap<>();
         for (String year : years) {
             map.put(year, blogRepository.findByYear(year));
         }
@@ -123,11 +123,12 @@ public class BlogServiceImpl implements BlogService {
     public Blog saveBlog(Blog blog) {
         if (blog.getId() == null) {
             // blog.setCreateTime(new Date());
-            blog.setUpdateTime(new Date());
+            // blog.setUpdateTime(new Date());
             blog.setViews(0);
-        } else {
-            blog.setUpdateTime(new Date());
         }
+        // else {
+        //    blog.setUpdateTime(new Date());
+        // }
         return blogRepository.save(blog);
     }
 
@@ -140,7 +141,7 @@ public class BlogServiceImpl implements BlogService {
             throw new NotFoundException("该博客不存在");
         }
         BeanUtils.copyProperties(blog,b, MyBeanUtils.getNullPropertyNames(blog));
-        b.setUpdateTime(new Date());
+        // b.setUpdateTime(new Date());
         return blogRepository.save(b);
     }
 
