@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <div class="two fields">
+        <div class="three fields">
           <div class="required field">
             <div class="ui left labeled action input">
               <label class="ui compact teal basic label">分类</label>
@@ -75,11 +75,18 @@
               </div>
             </div>
           </div>
+          <div class=" field">
+            <div class="ui left labeled action input">
+              <label class="ui compact teal basic label">日期</label>
+              <input type="text" name="strDateTime" th:value="*{strDateTime}" placeholder="2018/08/30 05:30:22">
+            </div>
+          </div>
         </div>
 
         <div class="required field">
           <div class="ui left labeled input">
             <label class="ui teal basic label">首图</label>
+            <!-- 首图示例：https://picsum.photos/id/1011/800/450 -->
             <input type="text" name="firstPicture" th:value="*{firstPicture}" placeholder="首图引用地址">
           </div>
         </div>
@@ -89,6 +96,7 @@
           <textarea class="m-blog-scription" name="description" th:text="*{description}" placeholder="博客描述..." maxlength="200"></textarea>
         </div>
 
+        <!-- 其它功能 -->
         <div class="inline fields">
           <div class="field">
             <div class="ui checkbox">
